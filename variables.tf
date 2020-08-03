@@ -15,10 +15,10 @@ variable "key_label" {
 #   default = "linode/ubuntu18.04"
 # }
 
-# variable "label" {
-#   description = "The Linode's label is for display purposes only, but must be unique."
-#   default = "default-linode"
-# }
+variable "label" {
+  description = "The Linode's label is for display purposes only, but must be unique."
+  default = "default-linode"
+}
 
 # variable "region" {
 #   description = "The region where your Linode will be located."

@@ -7,11 +7,12 @@ module "firewalls" {
     source = "./modules/web_server"
     firewall_label = var.firewall_label
     tags = var.tags
-    linodes = [module.linodes.linode_id]
+    linodes = local.linode_ids
 }
 
 locals {
     key = var.key
+    linode_ids = linode_instance.linode_base[*].id
 }
 
 resource "linode_sshkey" "main_key" {
@@ -22,11 +23,9 @@ resource "linode_sshkey" "main_key" {
 resource "linode_instance" "linode_base" {
     count = 2
     image = "linode/ubuntu18.04"
-    label = "my-linode-2"
+    label = "${var.label}_${count.index}"
     region = "us-east"
     type = "g6-standard-1"
-    key = var.key
-    key_label = var.key_label
     authorized_keys = [ linode_sshkey.main_key.ssh_key ]
     root_pass = var.root_pass
 }
