@@ -20,6 +20,7 @@ resource "linode_sshkey" "main_key" {
 }
 
 resource "linode_instance" "linode_base" {
+    count = 2
     image = "linode/ubuntu18.04"
     label = "my-linode-2"
     region = "us-east"
