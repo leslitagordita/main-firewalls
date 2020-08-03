@@ -10,26 +10,24 @@ module "firewalls" {
     linodes = [module.linodes.linode_id]
 }
 
-module "linodes" {
-    source = "./modules/linodes"
+locals {
     key = var.key
-    key_label = var.key_label
-    image = var.image
-    label = var.label
-    region = var.region
-    type = var.type
-    root_pass = var.root_pass
-    authorized_keys = [ module.linodes.sshkey_linode ]
 }
 
-module "linodes-2" {
-    source = "./modules/linodes"
+resource "linode_sshkey" "main_key" {
+    label = var.key_label
+    ssh_key = chomp(file(local.key))
+}
+
+resource "linode_instance" "linode_base" {
     image = "linode/ubuntu18.04"
     label = "my-linode-2"
     region = "us-east"
     type = "g6-standard-1"
-    root_pass = var.root_pass
     key = var.key
     key_label = var.key_label
-    authorized_keys = [ module.linodes.sshkey_linode ]
+    authorized_keys = [ linode_sshkey.main_key.ssh_key ]
+    root_pass = var.root_pass
 }
+
+

@@ -10,25 +10,25 @@ variable "key_label" {
   description = "New SSH key label."
 }
 
-variable "image" {
-  description = "Image to use for Linode instance."
-  default = "linode/ubuntu18.04"
-}
+# variable "image" {
+#   description = "Image to use for Linode instance."
+#   default = "linode/ubuntu18.04"
+# }
 
-variable "label" {
-  description = "The Linode's label is for display purposes only, but must be unique."
-  default = "default-linode"
-}
+# variable "label" {
+#   description = "The Linode's label is for display purposes only, but must be unique."
+#   default = "default-linode"
+# }
 
-variable "region" {
-  description = "The region where your Linode will be located."
-  default = "us-east"
-}
+# variable "region" {
+#   description = "The region where your Linode will be located."
+#   default = "us-east"
+# }
 
-variable "type" {
-  description = "Your Linode's plan type."
-  default = "g6-standard-1"
-}
+# variable "type" {
+#   description = "Your Linode's plan type."
+#   default = "g6-standard-1"
+# }
 
 variable "root_pass" {
   description = "Your Linode's root user's password."
