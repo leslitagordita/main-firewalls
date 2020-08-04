@@ -46,12 +46,6 @@ variable "linodes" {
   default     = []
 }
 
-variable "firewall_label" {
-  description = "This firewall's human-readable firewall_label"
-  type = string
-  default = "my-firewall"
-}
-
 variable "firewall_label_map" {
   type = "map"
   default = {
