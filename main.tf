@@ -10,7 +10,7 @@ locals {
 
 module "firewalls_web" {
     source = "./modules/web_server"
-    firewall_label = var.firewall_label
+    firewall_label = var.firewall_label_map[var.firewall_label]
     tags = var.tags
     linodes = local.linode_ids
 }

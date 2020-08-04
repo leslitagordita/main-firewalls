@@ -1,6 +1,6 @@
 key = "~/.ssh/id_rsa.pub"
 linode_count = 3
 key_label = "my-ssh-key"
-label = "linode"
-firewall_label = "web_server"
-tags = ["terra-tag"]
+label = "linode_web"
+firewall_label = "web"
+tags = ["my-example-tag"]

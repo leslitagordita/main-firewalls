@@ -52,6 +52,15 @@ variable "firewall_label" {
   default = "my-firewall"
 }
 
+variable "firewall_label_map" {
+  type = "map"
+  default = {
+    "web" = "firewall_web_server"
+    "mysql" = "firewall_mysql"
+    "ssh" = "firewall_ssh"
+  }
+}
+
 variable "tags" {
   description = "List of tags to apply to this Firewall"
   type        = list(string)
