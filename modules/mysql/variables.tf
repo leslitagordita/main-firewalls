@@ -19,6 +19,6 @@ variable "tags" {
 variable "addresses" {
   description = "A list of IP addresses, CIDR blocks, or 0.0.0.0/0 (to allow all) this rule applies to."
   type        = list(string)
-  default     = []
+  default     = ["0.0.0.0/0"]
 }
 
