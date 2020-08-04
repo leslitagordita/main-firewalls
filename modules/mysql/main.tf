@@ -5,13 +5,7 @@ resource "linode_firewall" "mysql" {
   inbound {
     protocol = "TCP"
     ports = ["3306"]
-    addresses = ["0.0.0.0/0"]
-  }
-
-  outbound {
-    protocol  = "TCP"
-    ports     = ["3306"]
-    addresses = ["0.0.0.0/0"]
+    addresses = var.addresses
   }
   linodes = var.linodes
 }
