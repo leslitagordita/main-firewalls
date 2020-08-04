@@ -10,6 +10,12 @@ variable "key_label" {
   description = "New SSH key label."
 }
 
+variable "linode_count" {
+  description = "The number of Linode instances to deploy."
+  type = number
+  default = 1
+}
+
 variable "image" {
   description = "Image to use for Linode instance."
   default = "linode/ubuntu18.04"

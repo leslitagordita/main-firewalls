@@ -21,7 +21,7 @@ resource "linode_sshkey" "main_key" {
 }
 
 resource "linode_instance" "linode_base" {
-    count = 2
+    count = var.linode_count
     image = var.image
     label = "${var.label}_${count.index}"
     region = var.region
