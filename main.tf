@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    linode = {
+      source = "terraform-providers/linode"
+    }
+  }
+  required_version = ">= 0.13"
+}
+
 provider "linode" {
     api_version = "v4beta"
     token = var.token

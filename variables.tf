@@ -47,7 +47,7 @@ variable "linodes" {
 }
 
 variable "firewall_label_map" {
-  type = "map"
+  type = map
   default = {
     "web" = "firewall_web_server"
     "mysql" = "firewall_mysql"

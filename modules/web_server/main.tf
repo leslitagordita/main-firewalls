@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    linode = {
+      source = "terraform-providers/linode"
+    }
+  }
+  required_version = ">= 0.13"
+}
+
 resource "linode_firewall" "web_server" {
   label = var.firewall_label
   tags  = var.tags
